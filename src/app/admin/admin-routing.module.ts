@@ -7,6 +7,7 @@ import { ProjectCreateComponent } from  './project-create/project-create.compone
 import { ProjectUpdateComponent } from  './project-update/project-update.component';
 import { LoginComponent } from './login/login.component';
 import { AdminGuard } from './admin.guard';
+import { RegistroComponent } from './registro/registro.component'; 
 
 const  routes:  Routes  = [
 {
@@ -26,6 +27,10 @@ canActivate: [AdminGuard]
 {
 path:  'login',
 component:  LoginComponent
+},
+{
+path:  'registro',
+component:  RegistroComponent
 },
 {
 path:  'update',

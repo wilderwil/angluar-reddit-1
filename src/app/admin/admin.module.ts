@@ -6,10 +6,10 @@ import { ProjectUpdateComponent } from './project-update/project-update.componen
 import { ProjectComponent } from './project/project.component';
 import { AdminRoutingModule } from  './admin-routing.module';
 import { LoginComponent } from './login/login.component';
-
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
-  declarations: [ProjectListComponent, ProjectCreateComponent, ProjectUpdateComponent, ProjectComponent, LoginComponent],
+  declarations: [ProjectListComponent, ProjectCreateComponent, ProjectUpdateComponent, ProjectComponent, LoginComponent,RegistroComponent],
   imports: [
     CommonModule,AdminRoutingModule
   ]

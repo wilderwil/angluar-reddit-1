@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,13 +8,30 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private   authService:  AuthService) { }
+  constructor(private   authService:  AuthService,private router:Router) { }
 
   ngOnInit() {
   }
-  public login(user,password){
-  	console.log(user);
-  	this.authService.login(user,password);
+   login(user,password):void{
+  	this.authService.loginEmailUser(user,password).then((res)=>{
+      console.log ('resUser',res);
+      this.router.navigate(['admin/list']);
+    }).catch(err=> console.log("Error ",err.message));
   }
+  loginGoogle():void{
+this.authService.loginGoogleUser().then((res)=>{
+      console.log ('resUser',res);
+      this.router.navigate(['admin/list']);
+    }).catch(err=> console.log("Error ",err.message));
+  //  this.authService.loginGoogleUser();
+  }
+loginFacebook():void{
+  this.authService.loginFacebookUser().then((res)=>{
+      console.log ('resUser',res);
+      this.router.navigate(['admin/list']);
+    }).catch(err=> console.log("Error ",err.message));
 
+    //this.authService.loginFacebookUser();
+  }
+  
 }

@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 
 import { AngularFireModule } from '@angular/fire' ;
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
  var config = {
     apiKey: "AIzaSyCvZhnKH1GYy0g9suhO2qtWqCCe4PuotR4",
@@ -30,7 +31,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,8 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     AppRoutingModule,
     AdminModule,
     AngularFireModule.initializeApp(config),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
