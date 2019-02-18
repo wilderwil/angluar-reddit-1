@@ -24,8 +24,13 @@ export class AuthService {
     })
 
    }
-
-   registroUser(){}
+//Metodo que permite Registrar un Usuario
+   registroUser(user,password){
+     return new Promise((resolve,reject)=>{
+       this.afAuth.auth.createUserWithEmailAndPassword(user,password)
+       .then(userData=> resolve(userData),err=>reject(err));
+     });
+   }
   // loginEmailUser(){}
   //Metodo que permite el login del usuario con una cuenta de Facebook diferente a la de abajo
   /*
