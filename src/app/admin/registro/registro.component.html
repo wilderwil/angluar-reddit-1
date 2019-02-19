@@ -23,18 +23,24 @@
                   <div >Password is required</div>
                   <div >Password must be at least 5 characters</div>
                 </div>
-                <hr>
-                
+              
+                <div class="form-group">
+                  <h5>Seleccionar imagen:</h5>
+                  <input type="file" name="" value="" placeholder="" accept=".png,  .jpg" (change)="onUpload($event)">
+                </div>
+                <input #imageUser type="text" hidden="true" name="" value="" placeholder="" [value]="urlImage | async">
+
+
                 <div class="progress">
                   <div  class="progress-bar progress-bar-striped bg-success"
-                    role="progressbar" >
-
+                    role="progressbar" [style.width]="(uploadPercent | async ) + '%' " >
+                    
                     <!-- <span class="progressText" *ngIf="urlImage | async">
                       Ok!!</span> -->
                   </div>
                 </div>
                 <br>
-              <button  class="btn btn-lg btn-primary btn-block" (click)="registroUser(userEmail.value, userPassword.value)">Register</button>
+              <button  *ngIf="urlImage | async; else btnDisabled " class="btn btn-lg btn-primary btn-block" (click)="registroUser(userEmail.value, userPassword.value)">Register</button>
                 <ng-template #btnDisabled>
                   <button type="submit" disabled=true class="btn btn-lg btn-secondary btn-block">Register</button>
                 </ng-template>

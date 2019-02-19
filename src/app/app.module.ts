@@ -13,6 +13,8 @@ import { ContactComponent } from './contact/contact.component';
 import { AngularFireModule } from '@angular/fire' ;
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ProfileComponent } from './users/profile/profile.component';
 
  var config = {
     apiKey: "AIzaSyCvZhnKH1GYy0g9suhO2qtWqCCe4PuotR4",
@@ -32,6 +34,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     HomeComponent,
     AboutComponent,
     ContactComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AdminModule,
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
