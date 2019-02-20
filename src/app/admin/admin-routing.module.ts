@@ -8,6 +8,7 @@ import { ProjectUpdateComponent } from  './project-update/project-update.compone
 import { LoginComponent } from './login/login.component';
 import { AdminGuard } from './admin.guard';
 import { RegistroComponent } from './registro/registro.component'; 
+import { ProfileComponent } from './../users/profile/profile.component'; 
 
 const  routes:  Routes  = [
 {
@@ -17,6 +18,11 @@ children: [
 {
 path:  'list',
 component:  ProjectListComponent,
+canActivate: [AdminGuard]
+},
+{
+path:  'profile',
+component:  ProfileComponent,
 canActivate: [AdminGuard]
 },
 {

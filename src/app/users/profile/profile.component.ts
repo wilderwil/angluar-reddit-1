@@ -15,11 +15,16 @@ export class ProfileComponent implements OnInit {
   	email:'',
   	photoUrl:''
   }
+  providerId:string;
   ngOnInit() {
   	this.authService.Authorizado().subscribe(user=>{
   		if(user){
-  			this.user=user;
+
+  			this.user.email=user.email;
+        this.user.name=user.displayName;
+        this.user.photoUrl=user.photoURL;
   			console.log("Usuario", user);
+        this.providerId=user.providerData[0].providerId;
   		}
 
   	})
