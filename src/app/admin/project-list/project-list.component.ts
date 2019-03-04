@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DataApiService } from '../../services/data-api-service';
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectListComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private daService:DataApiService) { }
+  public jugadores=[];
+  public jugador='';
   ngOnInit() {
+  	this.daService.getAllProyects().subscribe(jugadores => {
+  		console.log("proy",jugadores);
+  		this.jugadores=jugadores;
+  	});
+
   }
 
 }

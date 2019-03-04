@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminGuard } from './admin.guard';
 import { RegistroComponent } from './registro/registro.component'; 
 import { ProfileComponent } from './../users/profile/profile.component'; 
+import { ProyectListDetailComponent } from './proyect-list-detail/proyect-list-detail.component';
 
 const  routes:  Routes  = [
 {
@@ -18,6 +19,11 @@ children: [
 {
 path:  'list',
 component:  ProjectListComponent,
+canActivate: [AdminGuard]
+},
+{
+path:  'detail:id',
+component:  ProyectListDetailComponent,
 canActivate: [AdminGuard]
 },
 {

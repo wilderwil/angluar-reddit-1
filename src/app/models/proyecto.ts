@@ -3,4 +3,5 @@ export interface ProyectoInterface{
 	descripcion?: string;
 	email?: string;
 	autor?: string;
+	id?:string;
 }

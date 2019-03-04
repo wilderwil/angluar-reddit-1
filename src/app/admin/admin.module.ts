@@ -7,9 +7,10 @@ import { ProjectComponent } from './project/project.component';
 import { AdminRoutingModule } from  './admin-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { ProyectListDetailComponent } from './proyect-list-detail/proyect-list-detail.component';
 
 @NgModule({
-  declarations: [ProjectListComponent, ProjectCreateComponent, ProjectUpdateComponent, ProjectComponent, LoginComponent,RegistroComponent],
+  declarations: [ProjectListComponent,ProyectListDetailComponent, ProjectCreateComponent, ProjectUpdateComponent, ProjectComponent, LoginComponent,RegistroComponent],
   imports: [
     CommonModule,AdminRoutingModule
   ]
