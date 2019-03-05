@@ -15,7 +15,6 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ProfileComponent } from './users/profile/profile.component';
-import { ProyectListDetailComponent } from './admin/proyect-list-detail/proyect-list-detail.component';
 
  var config = {
     apiKey: "AIzaSyCvZhnKH1GYy0g9suhO2qtWqCCe4PuotR4",
@@ -36,7 +35,6 @@ import { ProyectListDetailComponent } from './admin/proyect-list-detail/proyect-
     AboutComponent,
     ContactComponent,
     ProfileComponent,
-    ProyectListDetailComponent,
   ],
   imports: [
     BrowserModule,
